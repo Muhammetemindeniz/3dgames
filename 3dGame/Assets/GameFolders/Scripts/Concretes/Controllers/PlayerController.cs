@@ -10,12 +10,16 @@ namespace Game.pControl
     {
         [SerializeField] float _force;
         Movement move;
+        Rotate rotate;
         DefaultInput _defaultInput;
         bool _isForceUp;
+        float _isLeftRight;
         private void Awake()
         {
             move = new Movement(GetComponent<Rigidbody>());
-            _defaultInput=new DefaultInput();
+            rotate = new Rotate(this);
+            
+            _defaultInput =new DefaultInput();
         }
         void Update()
         {
@@ -27,7 +31,7 @@ namespace Game.pControl
             {
                 _isForceUp = false;
             }
-
+            _isLeftRight= _defaultInput.IsLeftRight;
         }
         private void FixedUpdate()
         {
@@ -35,6 +39,7 @@ namespace Game.pControl
             {
                 move.FixedTick(55f);
             }
+            rotate.FixedTick(_isLeftRight);
         }
     }
 }
