@@ -1,4 +1,5 @@
 using Game.Inputs;
+using Game.Movements;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -8,12 +9,12 @@ namespace Game.pControl
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] float _force;
-        Rigidbody _rb;
+        Movement move;
         DefaultInput _defaultInput;
         bool _isForceUp;
         private void Awake()
         {
-            _rb = GetComponent<Rigidbody>();
+            move = new Movement(GetComponent<Rigidbody>());
             _defaultInput=new DefaultInput();
         }
         void Update()
@@ -32,7 +33,7 @@ namespace Game.pControl
         {
             if (_isForceUp) 
             {
-                _rb.AddForce(Vector3.up*Time.deltaTime*_force);
+                move.FixedTick(55f);
             }
         }
     }
