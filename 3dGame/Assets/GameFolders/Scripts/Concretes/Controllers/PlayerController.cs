@@ -9,16 +9,18 @@ namespace Game.pControl
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] float _force;
+        [SerializeField] float _turn;
         Movement move;
         Rotate rotate;
         DefaultInput _defaultInput;
         bool _isForceUp;
         float _isLeftRight;
+        public float Turn => _turn;
+        public float Force => _force;
         private void Awake()
         {
-            move = new Movement(GetComponent<Rigidbody>());
+            move = new Movement(this);
             rotate = new Rotate(this);
-            
             _defaultInput =new DefaultInput();
         }
         void Update()
@@ -35,9 +37,10 @@ namespace Game.pControl
         }
         private void FixedUpdate()
         {
+            Debug.Log(_isLeftRight);
             if (_isForceUp) 
             {
-                move.FixedTick(55f);
+                move.FixedTick();
             }
             rotate.FixedTick(_isLeftRight);
         }

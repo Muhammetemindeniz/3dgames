@@ -1,17 +1,21 @@
+using Game.pControl;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Game.Movements {
-    public class Movement : MonoBehaviour
+    public class Movement
     {
         Rigidbody _rb;
-        public Movement(Rigidbody rb)
+        PlayerController _playerController;
+        public Movement(PlayerController playerController)
         {
-            _rb= rb;
+            
+            _playerController = playerController;
+            _rb = _playerController.GetComponent<Rigidbody>();
         }
-        public void FixedTick(float force)
+        public void FixedTick()
         {
-            _rb.AddRelativeForce(Vector3.up*Time.deltaTime*force);
+            _rb.AddRelativeForce(Vector3.up*Time.deltaTime*_playerController.Force);
         }
     }
 

@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "1D Axis",
-                    "id": "ac01d239-04e6-4cd3-a884-77da620aa68f",
+                    "id": "263fd815-9c14-45dc-a1ad-50e98d95f6f4",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -48,8 +48,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "6e7866c5-da38-490f-b329-32535f5a3b01",
+                    "name": "Negative",
+                    "id": "e9468a81-d5de-46ba-bb17-0a1bc000ecc5",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -59,8 +59,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
-                    "id": "ae757a30-6b49-4944-ae27-bc8b51a4abf4",
+                    "name": "Positive",
+                    "id": "9d3ea9ee-3e24-4e5e-990b-108c68832cfd",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",

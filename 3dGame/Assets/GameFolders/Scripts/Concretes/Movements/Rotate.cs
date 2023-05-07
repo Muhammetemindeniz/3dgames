@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Game.Movements
 {
-    public class Rotate : MonoBehaviour
+    public class Rotate
     {
         PlayerController _playerController;
         Rigidbody _rb;
@@ -15,7 +15,12 @@ namespace Game.Movements
         }
         public void FixedTick(float dir)
         {
+            if (dir == 0) {if (_rb.freezeRotation) _rb.freezeRotation = false;
+                return; }
+                
+            if (!_rb.freezeRotation) _rb.freezeRotation = true;
 
+            _playerController.transform.Rotate(Vector3.back * Time.deltaTime * _playerController.Turn * dir);
         }
     }
 }
