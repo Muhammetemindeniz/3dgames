@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-namespace Game.pControl
+namespace Game.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
