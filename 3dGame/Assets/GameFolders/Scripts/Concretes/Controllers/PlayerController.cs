@@ -41,7 +41,6 @@ namespace Game.Controllers
         }
         private void FixedUpdate()
         {
-            Debug.Log(_isLeftRight);
             if (_canForceUp) 
             {
                 _move.FixedTick();
